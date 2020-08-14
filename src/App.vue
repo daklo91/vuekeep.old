@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <Header />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="container">
+      <TagBar />
+      <div>
+        <AddNote class="add-note" />
+        <Home />
+      </div>
     </div>
     <router-view />
   </div>
@@ -11,18 +14,26 @@
 
 <script>
 import Header from '@/components/Header.vue'
+import TagBar from '@/components/TagBar.vue'
+import Home from '@/views/Home.vue'
+import AddNote from '@/components/AddNote.vue'
 
 export default {
   components: {
-    Header
+    Header,
+    TagBar,
+    Home,
+    AddNote
   }
 }
 </script>
 
 <style>
-* {
-  background-color: #343434;
-  color: wheat;
-  border-color: wheat;
+.container {
+  display: flex;
+}
+.add-note {
+  text-align: center;
+  padding: 10px;
 }
 </style>

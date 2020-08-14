@@ -12,7 +12,7 @@ export default {}
 <style scoped>
 .header {
   display: flex;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid black;
 }
 input {
   border-radius: 10px;
