@@ -26,7 +26,11 @@ export default {
   },
   methods: {
     pushNote: function() {
-      this.testArray.push(this.addNote)
+      this.$store.commit('updateNote', this.addNote)
+      this.addNote = {
+        title: '',
+        description: ''
+      }
     }
   }
 }

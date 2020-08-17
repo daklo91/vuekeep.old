@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <Note
-      v-for="noteData in noteDataArray"
-      :key="noteData.id"
-      :note-data-array="noteData"
+      v-for="noteFromVuex in notesFromVuex"
+      :key="noteFromVuex.title"
+      :note-data-array="noteFromVuex"
     />
   </div>
 </template>
@@ -14,6 +14,9 @@ import Note from '@/components/Note.vue'
 export default {
   components: {
     Note
+  },
+  mounted() {
+    this.$store.state.notes = this.notesFromVuex
   },
   data() {
     return {
@@ -33,7 +36,13 @@ export default {
           description: 'pick up the trash, brush the cat',
           id: 3
         }
-      ]
+      ],
+      notesFromVuex: []
+    }
+  },
+  methods: {
+    pushNote(e) {
+      this.noteDataArray.push(e)
     }
   }
 }

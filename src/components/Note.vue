@@ -17,13 +17,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-  data() {
-    return {
-      title: 'First Note',
-      description:
-        'this is a pretty cool description, I absolutely love this description and think i should therefore make the color on this note better'
-    }
   }
 }
 </script>
