@@ -14,12 +14,15 @@
 </template>
 
 <script>
+import { uuid } from 'vue-uuid'
+
 export default {
   data() {
     return {
       addNote: {
         title: '',
-        description: ''
+        description: '',
+        id: uuid.v1()
       },
       testArray: []
     }
@@ -29,7 +32,8 @@ export default {
       this.$store.commit('updateNote', this.addNote)
       this.addNote = {
         title: '',
-        description: ''
+        description: '',
+        id: uuid.v1()
       }
     }
   }

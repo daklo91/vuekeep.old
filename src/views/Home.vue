@@ -2,7 +2,7 @@
   <div class="container">
     <Note
       v-for="noteFromVuex in notesFromVuex"
-      :key="noteFromVuex.title"
+      :key="noteFromVuex.id"
       :note-data-array="noteFromVuex"
     />
   </div>
