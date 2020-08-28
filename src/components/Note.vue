@@ -7,11 +7,18 @@
     <div class="body">
       <p class="description">{{ noteDataArray.description }}</p>
     </div>
+    <div class="footer">
+      <AddLabelToNote />
+    </div>
   </div>
 </template>
 
 <script>
+import AddLabelToNote from '@/components/AddLabelToNote.vue'
 export default {
+  components: {
+    AddLabelToNote
+  },
   props: {
     noteDataArray: {
       type: Object,

@@ -1,15 +1,12 @@
 <template>
   <div>
-    <div>
-      <input v-model="addNote.title" type="text" placeholder="Add Title" />
-      <input
-        v-model="addNote.description"
-        type="text"
-        placeholder="Add Description"
-      />
-      <button @click="pushNote()">Create Note</button>
-      <p></p>
-    </div>
+    <input v-model="addNote.title" type="text" placeholder="Add Title" />
+    <input
+      v-model="addNote.description"
+      type="text"
+      placeholder="Add Description"
+    />
+    <button @click="pushNote()">Create Note</button>
   </div>
 </template>
 
@@ -23,8 +20,7 @@ export default {
         title: '',
         description: '',
         id: uuid.v1()
-      },
-      testArray: []
+      }
     }
   },
   methods: {

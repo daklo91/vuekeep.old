@@ -1,16 +1,34 @@
 <template>
   <div class="container">
-    <h2>Notes</h2>
-    <h2>Reminders</h2>
-    <h2>Lorem, ipsum dolor.</h2>
-    <h2>Lorem, ipsum dolor.</h2>
-    <h2>Lorem, ipsum dolor.</h2>
-    <h2>Lorem, ipsum dolor.</h2>
+    <router-link :to="{ name: 'home' }">Notes</router-link>
+    <router-link :to="{ name: 'about' }">Reminders</router-link>
+    <Labels
+      v-for="labelFromVuex in labelsFromVuex"
+      :key="labelFromVuex.id"
+      :label-name="labelFromVuex"
+    />
+    <AddLabel />
   </div>
 </template>
 
 <script>
-export default {}
+import Labels from '@/components/Labels.vue'
+import AddLabel from '@/components/AddLabel.vue'
+
+export default {
+  components: {
+    Labels,
+    AddLabel
+  },
+  mounted() {
+    this.$store.state.labels = this.labelsFromVuex
+  },
+  data() {
+    return {
+      labelsFromVuex: []
+    }
+  }
+}
 </script>
 
 <style scoped>
